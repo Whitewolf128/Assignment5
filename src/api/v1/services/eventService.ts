@@ -8,7 +8,7 @@ import * as firestoreRepository from "../repositories/firestoreRepository";
  * @throws {Error} - If validation or repository operation fails.
  */
 
-const COLLECTION = "product";
+const COLLECTION = "event";
 
 export const getAllEvents = async(): Promise<Event[]> => {
     try{
@@ -30,7 +30,7 @@ export const getAllEvents = async(): Promise<Event[]> => {
 
 export const createEvents = async( eventData: {
     name: string;
-    date: string;
+    date: Date;
     capacity: number;
     registrationCount: number;
     status: string;
