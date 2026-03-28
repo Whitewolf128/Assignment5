@@ -1,6 +1,6 @@
 
-import Joi, { ObjectSchema } from "joi";
-import * as joiDate from "@joi/date";
+import Joi from "joi";
+import "@joi/date";
 
 // Post operation schemas organized by request part
 export const postSchemas = {
