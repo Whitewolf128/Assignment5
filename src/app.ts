@@ -1,6 +1,6 @@
 import express, { Express } from "express";
 import morgan from "morgan";
-import productRouter from "../src/api/v1/routes/productRoutes";
+import eventRouter from "../src/api/v1/routes/eventRoutes";
 
 const app: Express = express();
 
@@ -23,7 +23,7 @@ app.get("/api/v1/health", (req, res) => {
     });
 });
 // Route handler for items
-app.use("/api/v1", productRouter);
+app.use("/api/v1", eventRouter);
 
 // Export the app
 export default app;
