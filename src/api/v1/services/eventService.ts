@@ -1,6 +1,5 @@
 import { Event } from "../models/eventModel";
 import * as firestoreRepository from "../repositories/firestoreRepository";
-
 /**
  * Updates an existing post.
  * @param {Post} postData - The updated post data.
@@ -51,9 +50,20 @@ export const createEvents = async( eventData: {
         return{id, ...newProduct} as Event;
 
     }
+
     catch(error: unknown){
         const errorMessage = error instanceof Error ? error.message: "Unknown error";
         throw new Error(`Failed to create product: ${errorMessage}`);
     }
-}
+};
+
+export const updateEvent = (id: string, event: string): string => {
+    // Logic to update an item in the database
+    return "Event has been updated";
+};
+
+export const deleteEvent = (id: string): string => {
+    // Logic to delete an item from the database
+    return "Event has been deleted";
+};
 // ... other service functions (getPostById, updatePost, deletePost) ...

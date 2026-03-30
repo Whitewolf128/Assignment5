@@ -23,7 +23,6 @@ app.get("/api/v1/health", (req, res) => {
     });
 });
 // Route handler for items
-app.use("/api/v1/events", eventRouter);
-
+app.use("/api/v1", eventRouter);
 // Export the app
 export default app;
