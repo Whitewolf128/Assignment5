@@ -7,6 +7,7 @@ app.use(helmet());
 // script-src 'self' example.com;object-src 'none';
 // upgrade-insecure-requests"
 // Disable the Content-Security-Policy and X-Download-Options headers
+const isDevelopment = app.get("env") === "development";
 app.use(
   helmet({
     contentSecurityPolicy: {
@@ -15,7 +16,7 @@ app.use(
             defaultSrc: ["'self'"],
             scriptSrc: ["'self'", "example.com"],
             objectSrc: ["'none'"],
-            upgradeInsecureRequests: [],
+            "upgradeInsecureRequests": isDevelopment ? null: [],
         },
     },
     xDownloadOptions: false,
