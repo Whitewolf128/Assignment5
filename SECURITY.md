@@ -42,3 +42,30 @@ https://mycleverai.com/it-questions/why-does-content-security-policy-default-src
 https://helmetjs.github.io/
 
 5. OWASP Secure Headers Project - https://owasp.org/www-project-secure-headers/
+
+## cors configuration:
+### Configuration Applied
+
+\`\`\`export const getCorsOptions = () => {
+    const isDevelopment = process.env.NODE_ENV === "development";
+
+    if (isDevelopment) {
+        // Allow all origins in development for easy testing
+        return {
+            origin: true,
+            credentials: true,
+        };
+    }
+
+    // Strict origins in production
+    return {
+        origin: process.env.ALLOWED_ORIGINS?.split(",") || [],
+        credentials: true,
+        methods: ["GET", "POST", "PUT", "DELETE"],
+        allowedHeaders: ["Content-Type", "Authorization"],
+    };
+};\`\`\`
+
+### Justification
+1. the first part allows the security to be more lax for testing purposes and the second one allows it to be more strict
+### Sources
