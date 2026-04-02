@@ -25,6 +25,7 @@
   },
   "homepage": "https://github.com/Whitewolf128/Assignment5#readme",
   "devDependencies": {
+    "@types/cors": "^2.8.19",
     "@types/express": "^5.0.6",
     "@types/jest": "^30.0.0",
     "@types/joi": "^17.2.2",
