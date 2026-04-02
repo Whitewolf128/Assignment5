@@ -26,11 +26,19 @@
             defaultSrc: ["'self'"],
             scriptSrc: ["'self'", "example.com"],
             objectSrc: ["'none'"],
-            upgradeInsecureRequests: [],
-        },** - defaultSrc: self only allows the browser to load scripts, images and styles within the same origin to avoid XSS attacks and code injection, scriptSrc: ["'self'", "example.com"], allows the execution of scripts from the same origin and the specified origin to reduce the risk of XSS attacks, objectSrc: ["'none'"], it gives no access to any plugins or objects meaning nothing could be loaded prevent XSS attacks by making injected code not execute.
+            "upgradeInsecureRequests": isDevelopment ? null: [],
+        },** - defaultSrc: self only allows the browser to load scripts, images and styles within the same origin to avoid XSS attacks and code injection, scriptSrc: ["'self'", "example.com"], allows the execution of scripts from the same origin and the specified origin to reduce the risk of XSS attacks, objectSrc: ["'none'"], it gives no access to any plugins or objects meaning nothing could be loaded prevent XSS attacks by making injected code not execute, and then upgradeInsecureRequests upgrades http to https so doing the is development ? null will disable it.
 
 ### Sources
 
 1. Helmet.js Official Documentation - https://helmetjs.github.io/
-for what objectSrc does -https://content-security-policy.com/none/
-2. OWASP Secure Headers Project - https://owasp.org/www-project-secure-headers/
+
+2. for what objectSrc and scriptSrc does -https://content-security-policy.com/none/
+
+3. for what default src does -
+https://mycleverai.com/it-questions/why-does-content-security-policy-default-src-self-break-my-site-and-how-can-i-fix-it 
+
+4. to explain what upgradeInsecureRequests does -
+https://helmetjs.github.io/
+
+5. OWASP Secure Headers Project - https://owasp.org/www-project-secure-headers/
