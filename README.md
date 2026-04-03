@@ -85,3 +85,8 @@
     "status":"active",
     "category":"conference",
     "content":"Tech Conference 2025 event details"}'
+
+4. Link to Public Documentation
+
+    * Include the GitHub Pages URL where your OpenAPI documentation is hosted:
+    "(https://whitewolf128.github.io/Assignment5/)"
