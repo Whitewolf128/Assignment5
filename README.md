@@ -49,3 +49,39 @@
  **** How to start the server
  npm start
  ***** A developer should be able to follow these steps exactly and have your API running
+
+3. API Request Examples
+
+    *Include at least 3 different endpoint examples
+    eventRouter.get("/events", getAllEventsController); //get
+    eventRouter.post("/events", validateRequest(postSchemas.create), createEventsController); //post
+    eventRouter.put("/events/:id", updateEventController); //put
+    eventRouter.delete("/events/:id", deleteEventController); //delete
+    **Show the full request (method, URL, headers, body)
+
+    ***Show the expected response
+    {
+    "message": "Event created",
+    "data": {
+        "id": "Os2KPQUnQyLI8TkjCrpV",
+        "name": "Fluffy show",
+        "date": "2026-04-04T00:00:00.000Z",
+        "capacity": 10,
+        "registrationCount": 50,
+        "status": "active",
+        "category": "confrence",
+        "createdAt": "2026-04-03T05:42:47.687Z",
+        "updatedAt": "2026-04-03T05:42:47.687Z"
+    }
+    }
+    ****Use Postman's code snippet feature: Select the </> button in Postman to generate code snippets in your preferred format (cURL, JavaScript fetch, etc.)
+    postman request POST 'http://localhost:3000/api/v1/events/' \
+  --header 'Content-Type: application/json' \
+  --body '{
+    "name":"Fluffy show",
+    "date":"2026-04-03",
+    "capacity":10,
+    "registrationCount":50,
+    "status":"active",
+    "category":"conference",
+    "content":"Tech Conference 2025 event details"}'
