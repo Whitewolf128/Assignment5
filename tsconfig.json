@@ -8,6 +8,7 @@
         "forceConsistentCasingInFileNames": true,
         "outDir": "./dist",
         "resolveJsonModule": true,
+        "types": ["node"],           // <-- important wont work without it
         "noImplicitAny": true,
         "strictNullChecks": true,
         "strictPropertyInitialization": true,
