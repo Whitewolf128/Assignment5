@@ -3,6 +3,7 @@ import morgan from "morgan";
 import eventRouter from "../src/api/v1/routes/eventRoutes";
 import helmet from "helmet";
 import cors from "cors";
+import setupSwagger from "../config/swagger";
 const app: Express = express();
 
 app.use(express.json()); //  use JSON body parsing
@@ -13,6 +14,8 @@ app.use(morgan("combined"));
 // Apply basic Helmet security
 app.use(helmet());
 app.use(cors());
+// Setup Swagger
+setupSwagger(app);
 // GET request at the app root
 app.get("/", (req, res) => {
     res.send("Hello, World!");

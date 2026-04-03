@@ -5,6 +5,52 @@ import "@joi/date";
 
 
 // Your actual Joi validation schema
+/**
+ * @openapi
+ * components:
+ *   schemas:
+ *     Event:
+ *       type: object
+ *       required:
+ *         - id
+ *         - name
+ *         - capacity
+ *         - registrationCount
+ *         - date
+ * *       - status
+ *         - category
+ *       properties:
+ *         id:
+ *           type: string
+ *           description: Unique identifier for the user
+ *           example: "f5gk9a3y4a8y5"
+ *         name:
+ *           type: string
+ *           description: the events name
+ *           example: "fluffy show"
+ *         capacity:
+ *           type: number
+ *           description: How many people could go
+ *           example: 100
+ *         registrationCount:
+ *           type: number
+ *           description: How many people are going
+ *           example: 95
+ *         date:
+ *           type: date
+ *           description: when the event takes place
+ *           example: "2026-03-06"
+ *         status:
+ *           type: string
+ *           description: The current status of the event
+ *           valid: "active", "cancelled", "completed"
+ *           example: "completed"
+ *         category:
+ *           type: string
+ *           description: the type of the event
+ *           valid: "conference", "workshop", "meetup", "seminar", "general"
+ *           example: "general"
+ */
 
 // Post operation schemas organized by request part
 export const postSchemas = {
