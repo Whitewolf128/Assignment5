@@ -11,7 +11,16 @@ app.use(express.json()); //  use JSON body parsing
 
 // Use Morgan for HTTP request logging
 app.use(morgan("combined"));
+const publicCorsOptions = {
+    origin: "*", // Allow all origins for public endpoints
+    methods: ["GET"],
+};
 
+const authenticatedCorsOptions = {
+    origin: process.env.ALLOWED_ORIGINS?.split(",") || [],
+    credentials: true,
+    methods: ["GET", "POST", "PUT", "DELETE"],
+};
 // Apply basic Helmet security
 app.use(helmet());
 app.use(cors());
@@ -31,6 +40,8 @@ app.get("/api/v1/health", (req, res) => {
     });
 });
 // Route handler for items
-app.use("/api/v1", eventRouter);
+app.use("/api/v1", eventRouter, cors(authenticatedCorsOptions));
+app.use("/api-docs", cors(publicCorsOptions));
+
 // Export the app
 export default app;
