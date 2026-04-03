@@ -10,7 +10,7 @@ export const postSchemas = {
             name: Joi.string().required().min(3).max(80),
             capacity: Joi.number().required().integer().min(5).positive(),
             registrationCount: Joi.number().required().integer().max(100).positive().precision(2),
-            date: Joi.date().format("yyyy-mm-dd hh:mm:ss").required().greater('now'),
+            date: Joi.date().required().greater('now'),
             status:  Joi.string().required().valid("active", "cancelled", "completed"),
             category:  Joi.string().required().valid("confrence", "workshop", "meetup", "seminar", "general"),
             content: Joi.string().required().messages({
@@ -26,7 +26,7 @@ export const postSchemas = {
             name: Joi.string().required().min(3).max(80),
             capacity: Joi.number().required().integer().min(5).positive(),
             registrationCount: Joi.number().required().integer().max(100).positive().precision(2),
-            date: Joi.date().format("yyyy-mm-dd hh:mm:ss").required().greater('now'),
+            date: Joi.date().required().greater('now'),
             status:  Joi.string().required().valid("active", "cancelled", "completed"),
             category:  Joi.string().required().valid("confrence", "workshop", "meetup", "seminar", "general"),
     },
