@@ -1,9 +1,10 @@
 {
   "name": "assignment5",
   "version": "1.0.0",
-  "description": "",
+  "description": "1. Project Overview",
   "main": "index.js",
   "directories": {
+    "doc": "docs",
     "test": "test"
   },
   "scripts": {
