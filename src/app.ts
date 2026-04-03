@@ -3,9 +3,10 @@ import morgan from "morgan";
 import eventRouter from "../src/api/v1/routes/eventRoutes";
 import helmet from "helmet";
 import cors from "cors";
+import dotenv from "dotenv";
 import setupSwagger from "../config/swagger";
 const app: Express = express();
-
+dotenv.config();
 app.use(express.json()); //  use JSON body parsing
 
 // Use Morgan for HTTP request logging
