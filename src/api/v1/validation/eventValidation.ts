@@ -12,7 +12,7 @@ export const postSchemas = {
             registrationCount: Joi.number().required().integer().max(100).positive().precision(2),
             date: Joi.date().required().greater('now'),
             status:  Joi.string().required().valid("active", "cancelled", "completed"),
-            category:  Joi.string().required().valid("confrence", "workshop", "meetup", "seminar", "general"),
+            category:  Joi.string().required().valid("conference", "workshop", "meetup", "seminar", "general"),
             content: Joi.string().required().messages({
                 "any.required": "Content is required",
                 "string.empty": "Content cannot be empty",
@@ -28,6 +28,6 @@ export const postSchemas = {
             registrationCount: Joi.number().required().integer().max(100).positive().precision(2),
             date: Joi.date().required().greater('now'),
             status:  Joi.string().required().valid("active", "cancelled", "completed"),
-            category:  Joi.string().required().valid("confrence", "workshop", "meetup", "seminar", "general"),
+            category:  Joi.string().required().valid("conference", "workshop", "meetup", "seminar", "general"),
     },
 };
