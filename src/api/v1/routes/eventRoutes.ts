@@ -88,6 +88,7 @@ eventRouter.get("/events", getAllEventsController);
  *       '404':
  *         description: event not found
  */
+
 eventRouter.post("/events", validateRequest(postSchemas.create), createEventsController);
 // API doc 1: GET event endpoint with request parameters
 /**

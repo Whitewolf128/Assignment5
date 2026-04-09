@@ -1,3 +1,5 @@
+import { jest, afterEach, afterAll } from '@jest/globals';
+
 // Always mock firebase in every test
 jest.mock("../config/firebaseConfig", () => ({
     auth: {

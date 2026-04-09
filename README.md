@@ -90,3 +90,12 @@
 
     * Include the GitHub Pages URL where your OpenAPI documentation is hosted:
     "(https://whitewolf128.github.io/Assignment5/)"
+
+5. Local Documentation Access
+
+    * Instructions for accessing Swagger UI when running locally
+        1. install swagger Ui and jsdoc
+        2. configure swagger
+        3. run npm start
+        4. go to "http://localhost:3000/api-docs" on preferred browser
+    **Example: "When running locally, access the API documentation at http://localhost:3000/api-docs"
