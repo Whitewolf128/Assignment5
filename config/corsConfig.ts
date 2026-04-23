@@ -1,6 +1,6 @@
 // config/corsConfig.ts
 export const getCorsOptions = () => {
-    const isDevelopment = process.env.NODE_ENV === "development";
+    const isDevelopment = process.env.NODE_ENV === "production";
 
     if (isDevelopment) {
         // Allow all origins in development for easy testing
